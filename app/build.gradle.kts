@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "cityu.ai510.TLDR"
-    compileSdk = 34
+    namespace = "cityu.ai510.MedTranslate"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "cityu.ai510.TLDR"
+        applicationId = "cityu.ai510.MedTranslate"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -63,9 +63,11 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.mpfilepicker)
     implementation(libs.firebase.crashlytics.buildtools)
-    implementation (libs.tom.roush.pdfbox.android)
-    implementation (libs.okhttp)
-    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation(libs.tom.roush.pdfbox.android)
+    implementation(libs.okhttp)
+    implementation(libs.gson)
+    implementation(libs.countrycodepickercompose)
+    implementation(libs.androidx.media3.exoplayer)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

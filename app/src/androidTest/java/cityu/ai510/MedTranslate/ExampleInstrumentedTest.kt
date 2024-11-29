@@ -1,4 +1,4 @@
-package cityu.ai510.TLDR
+package cityu.ai510.MedTranslate
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

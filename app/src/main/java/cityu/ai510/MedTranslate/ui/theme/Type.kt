@@ -1,4 +1,4 @@
-package cityu.ai510.TLDR.ui.theme
+package cityu.ai510.MedTranslate.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

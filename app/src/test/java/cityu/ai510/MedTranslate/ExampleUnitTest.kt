@@ -1,4 +1,4 @@
-package cityu.ai510.TLDR
+package cityu.ai510.MedTranslate
 
 import org.junit.Test
 

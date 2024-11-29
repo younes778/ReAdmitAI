@@ -1,4 +1,4 @@
-package cityu.ai510.TLDR.ui.theme
+package cityu.ai510.MedTranslate.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
