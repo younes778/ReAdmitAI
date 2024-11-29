@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.sharp.KeyboardArrowRight
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.sharp.Info
 import androidx.compose.material.icons.sharp.KeyboardArrowRight
@@ -331,7 +332,7 @@ fun ResultUI(state: MutableState<StateManager>) {
             data.map { text ->
                 Row {
                     Icon(
-                        Icons.Sharp.KeyboardArrowRight,
+                        Icons.AutoMirrored.Sharp.KeyboardArrowRight,
                         tint = colorResource(R.color.secondary_text),
                         contentDescription = "",
                         modifier = Modifier
@@ -400,65 +401,6 @@ fun ShowImagePicker(
 
     }
 }
-
-/*
-fun callSummarizeAPI(pdf_text: String, context: Context): String {
-    var res = "An error has occured while attempting to summarize"
-    val url = "https://ai510-bart-tp04.westus.inference.ml.azure.com/score"
-    val api_key = ApiKey.KEY
-
-    val data = mapOf("content" to pdf_text)
-    val headers = mapOf(
-        "Content-Type" to "application/json",
-        "Authorization" to "Bearer $api_key"
-    )
-
-    try {
-        val response = with(context) {
-            val client = OkHttpClient.Builder()
-                .connectTimeout(
-                    120,
-                    TimeUnit.SECONDS
-                ) // Set a longer connection timeout (adjust as needed)
-                .readTimeout(120, TimeUnit.SECONDS)
-                .build()
-            val jsonBody = Gson().toJson(data)
-                .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
-            val request = Request.Builder()
-                .url(url)
-                .headers(headers.toHeaders())
-                .post(jsonBody)
-                .build()
-            client.newCall(request).execute()
-        }
-
-        if (response.isSuccessful) {
-            val responseBody = response.body!!.string()
-            val extractedData = Gson().fromJson(responseBody, Map::class.java)
-            res = extractedData["summary"].toString()
-        } else {
-            val error = "Request failed with status code ${response.code}"
-            // Handle request failure
-            Log.e("summary-api", error)
-        }
-    } catch (e: Exception) {
-        // Handle network exceptions
-        e.printStackTrace()
-    }
-    Log.e("res", res)
-    return res;
-}
-
-private class AsyncAPITask(
-    private val context: Context
-) : AsyncTask<MPFile<Any>, Void, String>() {
-    override fun doInBackground(vararg pdf: MPFile<Any>): String {
-        return callSummarizeAPI("", context)
-    }
-
-    override fun onPostExecute(sb: String) {
-    }
-}*/
 
 @Preview(showBackground = true)
 @Composable
