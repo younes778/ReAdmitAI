@@ -1,1 +1,1 @@
-[![Watch the video](https://github.com/younes778/TLDR/blob/main/screenshots/04.png)](https://github.com/younes778/TLDR/blob/main/screenshots/Screen_recording.webm)
+[Screenshot](https://github.com/younes778/MedTranslate/blob/main/screenshots/01.png)
