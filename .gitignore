@@ -13,4 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/app/src/main/java/cityu/ai510/TLDR/ApiKey.kt
+/app/src/main/java/cityu/ai510/MedTranslate/server/Config.kt

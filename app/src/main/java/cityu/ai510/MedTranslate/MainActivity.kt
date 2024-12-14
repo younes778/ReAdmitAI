@@ -23,7 +23,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.sharp.KeyboardArrowRight
 import androidx.compose.material.icons.rounded.PlayArrow
@@ -68,7 +70,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 val context = LocalContext.current
-                val state = remember { mutableStateOf(StateManager()) }
+                val state = remember { mutableStateOf(StateManager(context)) }
                 val showFilePicker = remember { mutableStateOf(false) }
                 Surface(modifier = Modifier.fillMaxSize()) {
                     ShowImagePicker(state, showFilePicker)
@@ -131,7 +133,10 @@ fun ImageUI(state: MutableState<StateManager>, context: Context) {
             if (bitmap != null) {
                 Image(
                     bitmap = bitmap.asImageBitmap(),
-                    contentDescription = ""
+                    contentDescription = "",
+                    contentScale = ContentScale.FillBounds,
+                    modifier = Modifier
+                        .fillMaxSize()
                 )
                 return
             }
@@ -314,6 +319,7 @@ fun ResultUI(state: MutableState<StateManager>) {
     Column(modifier = Modifier.wrapContentHeight(), horizontalAlignment = Alignment.Start) {
         val mgrState by state.value.state
         val data by state.value.data
+        val scrollState = rememberScrollState()
         Text(
             modifier = Modifier
                 .wrapContentHeight(),
@@ -328,26 +334,13 @@ fun ResultUI(state: MutableState<StateManager>) {
             modifier = Modifier.wrapContentSize(),
             horizontalAlignment = Alignment.Start
         ) {
-            data.map { text ->
-                Row {
-                    Icon(
-                        Icons.AutoMirrored.Sharp.KeyboardArrowRight,
-                        tint = colorResource(R.color.secondary_text),
-                        contentDescription = "",
-                        modifier = Modifier
-                            .wrapContentSize()
-                            .width(25.dp)
-                            .height(25.dp)
-                    )
-                    Text(
-                        text = text,
-                        textAlign = TextAlign.Start,
-                        fontSize = 18.sp,
-                        color = colorResource(R.color.secondary_text)
-                    )
-                }
-                Spacer(Modifier.size(10.dp))
-            }
+            Text(
+                text = data,
+                textAlign = TextAlign.Start,
+                fontSize = 18.sp,
+                color = colorResource(R.color.secondary_text),
+                modifier = Modifier.verticalScroll(scrollState)
+            )
         }
     }
 }
@@ -406,7 +399,7 @@ fun ShowImagePicker(
 fun GreetingPreview() {
     MyApplicationTheme {
         val context = LocalContext.current
-        val state = remember { mutableStateOf(StateManager(State.TRANSLATING)) }
+        val state = remember { mutableStateOf(StateManager(State.PROCESSING, context)) }
         val showFilePicker = remember { mutableStateOf(false) }
         ShowImagePicker(state, showFilePicker)
         MainUI(state, showFilePicker, context)
