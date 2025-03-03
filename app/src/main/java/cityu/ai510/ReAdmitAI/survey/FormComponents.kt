@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.dsc.form_builder.ChoiceState
@@ -76,8 +77,8 @@ fun TextInput(label: String, state: TextFieldState) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),  // Numeric Keyboard
 
             colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = MaterialTheme.colorScheme.onPrimary,
-                unfocusedBorderColor = MaterialTheme.colorScheme.onPrimary,
+                focusedBorderColor = Color.Blue,
+                unfocusedBorderColor = Color.Gray,
                 errorBorderColor = MaterialTheme.colorScheme.error,
             )
         )

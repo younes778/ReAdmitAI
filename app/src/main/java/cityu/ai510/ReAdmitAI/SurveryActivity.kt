@@ -94,9 +94,11 @@ class SurveyActivity : ComponentActivity() {
                         dialogActionType = DialogActionType.INFORMATIVE,
                         dismissTouchOutside = {
                             showFailureDialog = false
+                            viewmodel.reset()
                         },
                         neutralButtonClick = {
                             showFailureDialog = false
+                            viewmodel.reset()
                         })
                 }
 

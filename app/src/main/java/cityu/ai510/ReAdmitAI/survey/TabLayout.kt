@@ -62,7 +62,7 @@ fun TabLayout(screen: Int) {
             TextBox(onPlaced = { end = it }) {
                     val fontWeight = if (screen == 2) FontWeight.Bold else FontWeight.Normal
                     Text(
-                        text = "Medical\nInformation",
+                        text = "Medication\nInformation",
                         textAlign = TextAlign.Center,
                         style = textStyle.copy(fontWeight = fontWeight),
                     )
