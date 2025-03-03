@@ -1,4 +1,4 @@
-package cityu.ai510.MedTranslate.ui.theme
+package cityu.ai510.ReAdmitAI.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

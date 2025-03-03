@@ -52,7 +52,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -61,15 +60,12 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.mpfilepicker)
-    implementation(libs.firebase.crashlytics.buildtools)
-    implementation(libs.tom.roush.pdfbox.android)
     implementation(libs.okhttp)
     implementation(libs.gson)
-    implementation(libs.countrycodepickercompose)
-    implementation(libs.androidx.media3.exoplayer)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+    implementation(libs.form.builder)
+    implementation(libs.fancyjetpackcomposedialog)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

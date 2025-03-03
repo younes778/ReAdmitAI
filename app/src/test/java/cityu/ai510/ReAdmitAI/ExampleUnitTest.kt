@@ -1,4 +1,4 @@
-package cityu.ai510.MedTranslate
+package cityu.ai510.ReAdmitAI
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package cityu.ai510.MedTranslate.server
+package cityu.ai510.ReAdmitAI.server
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -1,4 +1,4 @@
-package cityu.ai510.MedTranslate
+package cityu.ai510.ReAdmitAI
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
