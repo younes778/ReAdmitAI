@@ -1,9 +1,5 @@
 package cityu.ai510.ReAdmitAI.survey
 
-
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -44,7 +40,7 @@ fun TabLayout(screen: Int) {
             TextBox(onPlaced = { start = it }) {
                 val fontWeight = if (screen == 0) FontWeight.Bold else FontWeight.Normal
                 Text(
-                    text = "Personal\nInformation",
+                    text = "Personal\nInfo",
                     textAlign = TextAlign.Center,
                     style = textStyle.copy(fontWeight = fontWeight),
                 )
@@ -53,7 +49,7 @@ fun TabLayout(screen: Int) {
             TextBox(onPlaced = { middle = it }) {
                     val fontWeight = if (screen == 1) FontWeight.Bold else FontWeight.Normal
                     Text(
-                        text = "Hospital\nInformation",
+                        text = "Hospital\nInfo",
                         textAlign = TextAlign.Center,
                         style = textStyle.copy(fontWeight = fontWeight),
                     )
@@ -62,7 +58,7 @@ fun TabLayout(screen: Int) {
             TextBox(onPlaced = { end = it }) {
                     val fontWeight = if (screen == 2) FontWeight.Bold else FontWeight.Normal
                     Text(
-                        text = "Medication\nInformation",
+                        text = "Medication\nInfo",
                         textAlign = TextAlign.Center,
                         style = textStyle.copy(fontWeight = fontWeight),
                     )
